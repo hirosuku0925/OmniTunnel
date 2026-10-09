@@ -62,7 +62,7 @@ ios/                              iOS Simulator build 用 runner
 
 ## iOS Simulator CI（ビルドのみ）
 
-`.github/workflows/build-ios-sim.yml` は push、pull request、手動実行時に `macos-latest` 上で Release simulator build を実行します。`--no-codesign` を指定するため、実機向け署名証明書や Provisioning Profile は不要です。成功すると Actions の run ページに `OmniTunnel-ios-simulator` という ZIP artifact が保存されます。
+`.github/workflows/build-ios-sim.yml` は push、pull request、手動実行時に `macos-latest` 上で Debug simulator build を実行します。Flutter は Simulator 向け Release build をサポートしないため Debug を使います。`--no-codesign` を指定するため、実機向け署名証明書や Provisioning Profile は不要です。成功すると Actions の run ページに `OmniTunnel-ios-simulator` という ZIP artifact が保存されます。
 
 現行 runner の deployment target は iOS 15.0、Bundle ID は `com.example.omnitunnel` です。CI では Flutter の依存解決と Xcode project の設定を使い、CocoaPods の手動実行はしません。
 

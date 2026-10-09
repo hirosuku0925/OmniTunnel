@@ -28,7 +28,7 @@ jobs:
         run: flutter pub get
 
       - name: Build simulator app
-        run: flutter build ios --simulator --release --no-codesign
+        run: flutter build ios --simulator --debug --no-codesign
 
       - name: Zip Runner.app
         run: ditto -c -k --sequesterRsrc --keepParent build/ios/iphonesimulator/Runner.app OmniTunnel-ios-simulator.zip
